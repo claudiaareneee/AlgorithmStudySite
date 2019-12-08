@@ -1,5 +1,6 @@
 /* jshint esversion: 6 */
 let addButton = document.getElementById("addButton");
+let deleteButton = document.getElementById("deleteButton");
 let nameInput = document.getElementById('nameInput');
 let classInput = document.getElementById('classInput');
 let strategyOption = document.getElementById('strategyOption');
@@ -16,6 +17,7 @@ if (sessionStorage.getItem("editAlgorithmId") != null){
     shouldLoadValue = true;
     var algorithmId = sessionStorage.getItem("editAlgorithmId");
     sessionStorage.removeItem("editAlgorithmId");
+    deleteButton.setAttribute('style','');
 } 
 
 if (shouldLoadValue){
@@ -63,3 +65,6 @@ addButton.addEventListener('click', () => {
     }   
 });
 
+deleteButton.addEventListener('click', () => {
+    ref.remove();
+});

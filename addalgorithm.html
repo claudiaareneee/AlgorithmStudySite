@@ -72,7 +72,7 @@
                     <div class="form-group col">
                         <label for="worstCaseOption">Worst case asymptotic complexity</label>
                         <select class="form-control" id="worstCaseOption">
-                            <option>O(c)</option>
+                            <option>O(1)</option>
                             <option>O(log(log(n)))</option>
                             <option>O(log(n))</option>
                             <option>O(nlog(n))</option>
@@ -85,7 +85,7 @@
                     <div class="form-group col">
                         <label for="averageCaseOption">Average case asymptotic complexity</label>
                         <select class="form-control" id="averageCaseOption">
-                            <option>O(c)</option>
+                            <option>O(1)</option>
                             <option>O(log(log(n)))</option>
                             <option>O(log(n))</option>
                             <option>O(nlog(n))</option>
@@ -98,7 +98,7 @@
                     <div class="form-group col">
                         <label for="bestCaseOption">Best case asymptotic complexity</label>
                         <select class="form-control" id="bestCaseOption">
-                            <option>O(c)</option>
+                            <option>O(1)</option>
                             <option>O(log(log(n)))</option>
                             <option>O(log(n))</option>
                             <option>O(nlog(n))</option>
@@ -119,6 +119,7 @@
                     <textarea class="form-control" id="factsTestArea" rows="3"></textarea>
                 </div>
                 <button id="addButton" type="submit" class="btn btn-primary">Add algorithm</button>
+                <button id="deleteButton" type="submit" class="btn btn-primary" style="visibility: hidden;">Delete algorithm</button>
             </form>
         </div>
     </div>
