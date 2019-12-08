@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Algorithm Study Site - Algorithms</title>
+    <title>Algorithm Study Site</title>
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -45,10 +45,23 @@
             </div>
         </div>
     </nav>
+    </nav>
 
     <div class="main-content">
-        <h1>Algorithms</h1>
-        <div id="cards"></div>
+        <h1>Notes</h1>
+        <form>
+            <div class="form-group">
+                <label for="titleInput">Note title</label>
+                <input type="text" class="form-control" id="titleInput" placeholder="Title" required>
+            </div>
+            <div class="form-group">
+                <label for="noteTextArea">Note content</label>
+                <textarea class="form-control" id="noteTextArea" rows="3"></textarea>
+            </div>
+            <button id="addButton" type="submit" class="btn btn-primary">Add note</button>
+            <button id="deleteButton" type="submit" class="btn btn-primary" style="visibility: hidden;">Delete
+                note</button>
+        </form>
     </div>
 
 
@@ -94,7 +107,7 @@
     <script>
         var socket = io();
     </script>
-    <script src="algorithms.js"></script>
+    <script src="addnotes.js"></script>
 </body>
 
 </html>
