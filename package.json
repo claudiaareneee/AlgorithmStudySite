@@ -1,0 +1,24 @@
+{
+  "name": "algorithmstudysite",
+  "version": "1.0.0",
+  "description": "A webapp designed to help me study",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "socket.io": "^2.3.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/claudiaareneee/AlgorithmStudySite.git"
+  },
+  "author": "Claudia Nelson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/claudiaareneee/AlgorithmStudySite/issues"
+  },
+  "homepage": "https://github.com/claudiaareneee/AlgorithmStudySite#readme"
+}
