@@ -21,7 +21,7 @@ var creatNoteCard = function(note, id){
     
     container.className = "card algo-card";
     header.className = "card-header";
-    icon.className = "fa fa-edit float-right";
+    icon.className = "fa fa-edit float-right icon-button";
     cardbody.className = "card-body";
     
     header.innerHTML = note.title;

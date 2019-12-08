@@ -4,6 +4,13 @@
 .algo-card {
     margin-bottom: 1rem;
 }
+.icon-button{
+    color:#333333;
+}
+
+.icon-button:hover{
+    color:#666666;
+}
 /* #newAlgorithmContainer {
     margin: 3rem;
 } */
