@@ -3,22 +3,19 @@
 let ref = firebase.database().ref('/algorithms/').orderByChild('name');
 let cards = document.getElementById('cards');
 
-// ref.on('value', (snapshot) => {
-//     console.log(snapshot.val());
-// });
-
 ref.once('value').then((snapshot)=>{
     console.log(snapshot.val());
 
     for (const key in snapshot.val()) {
         let algorithm = snapshot.val()[key];
-        cards.appendChild(createAlgorithmCard(algorithm));
+        cards.appendChild(createAlgorithmCard(algorithm, key));
     }
 });
 
-var createAlgorithmCard = function(algorithm){
+var createAlgorithmCard = function(algorithm, id){
     var container = document.createElement("DIV");
     var header = document.createElement("DIV");
+    var icon = document.createElement("I");
     var cardbody = document.createElement("DIV");
     var className = document.createElement("P");
     var strategy = document.createElement("P");
@@ -30,6 +27,7 @@ var createAlgorithmCard = function(algorithm){
     
     container.className = "card algo-card";
     header.className = "card-header";
+    icon.className = "fa fa-edit float-right";
     cardbody.className = "card-body";
     
     header.innerHTML = algorithm.name;
@@ -42,7 +40,12 @@ var createAlgorithmCard = function(algorithm){
     pseudocode.innerHTML = "Pseuodcode: " + algorithm.pseudocode;
     facts.innerHTML = "Facts: " + algorithm.facts;
 
-    console.log(algorithm);
+    icon.addEventListener('click', () => {
+        sessionStorage.setItem('editAlgorithmId', id);
+        window.location = "addalgorithm.html";
+    });
+
+    header.appendChild(icon);
 
     cardbody.append(className);
     cardbody.append(strategy);
