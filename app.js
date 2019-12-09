@@ -23,6 +23,6 @@ io.on('connection', function(socket){
     });
 });
 
-http.listen(process.env.PORT || 3000, hostname, function(){
+http.listen(process.env.PORT || 3000, function(){
     console.log('Server running at http://${hostname}:${port}/', hostname, port);
 });
