@@ -25,8 +25,8 @@ var creatNoteCard = function(note, id){
     cardbody.className = "card-body";
     
     header.innerHTML = note.title;
-
-    notes.innerHTML = note.notemessage;
+    var notesText = note.notemessage.replace(/\n/g, "<br />");
+    notes.innerHTML = notesText;
 
     icon.addEventListener('click', () => {
         sessionStorage.setItem('editNotesId', id);
