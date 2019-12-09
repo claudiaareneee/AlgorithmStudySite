@@ -19,9 +19,11 @@ var createAlgorithmCard = function(algorithm, id){
     var cardbody = document.createElement("DIV");
     var className = document.createElement("P");
     var strategy = document.createElement("P");
-    var bestCase = document.createElement("P");
-    var averageCase = document.createElement("P");
-    var worstCase = document.createElement("P");
+    var asyptoticComplexitiesLabel = document.createElement("P");
+    var asyptoticComplexities = document.createElement("UL");
+    var bestCase = document.createElement("li");
+    var averageCase = document.createElement("li");
+    var worstCase = document.createElement("li");
     var pseudocode = document.createElement("P");
     var facts = document.createElement("P");
     
@@ -34,9 +36,10 @@ var createAlgorithmCard = function(algorithm, id){
 
     className.innerHTML = "Class: " + algorithm.class;
     strategy.innerHTML = "Strategy: " + algorithm.strategy;
-    bestCase.innerHTML = "Best case asyptotic complexity:" + algorithm.bestCase;
-    averageCase.innerHTML = "Average case asyptotic complexity" + algorithm.averageCase;
-    worstCase.innerHTML = "Worst case asyptotic complexity" + algorithm.worstCase;
+    asyptoticComplexitiesLabel.innerHTML = "Asyptotic Complexites: ";
+    bestCase.innerHTML = "Best case: " + algorithm.bestCase;
+    averageCase.innerHTML = "Average case: " + algorithm.averageCase;
+    worstCase.innerHTML = "Worst case: " + algorithm.worstCase;
     pseudocode.innerHTML = "Pseuodcode: <pre><code>" + algorithm.pseudocode + "</pre></code>";
     var factsText = algorithm.facts.replace(/\n/g, "<br />");
     facts.innerHTML = "Facts: "+ '<br>' + factsText;
@@ -47,12 +50,14 @@ var createAlgorithmCard = function(algorithm, id){
     });
 
     header.appendChild(icon);
+    asyptoticComplexities.appendChild(bestCase);
+    asyptoticComplexities.appendChild(averageCase);
+    asyptoticComplexities.appendChild(worstCase);
 
     cardbody.append(className);
     cardbody.append(strategy);
-    cardbody.append(bestCase);
-    cardbody.append(averageCase);
-    cardbody.append(worstCase);
+    cardbody.append(asyptoticComplexitiesLabel);
+    cardbody.append(asyptoticComplexities);
     cardbody.append(pseudocode);
     cardbody.append(facts);
 
@@ -61,3 +66,4 @@ var createAlgorithmCard = function(algorithm, id){
 
     return container;
 };
+
