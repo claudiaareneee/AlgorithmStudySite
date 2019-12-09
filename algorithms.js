@@ -37,8 +37,9 @@ var createAlgorithmCard = function(algorithm, id){
     bestCase.innerHTML = "Best case asyptotic complexity:" + algorithm.bestCase;
     averageCase.innerHTML = "Average case asyptotic complexity" + algorithm.averageCase;
     worstCase.innerHTML = "Worst case asyptotic complexity" + algorithm.worstCase;
-    pseudocode.innerHTML = "Pseuodcode: " + algorithm.pseudocode;
-    facts.innerHTML = "Facts: " + algorithm.facts;
+    pseudocode.innerHTML = "Pseuodcode: <pre><code>" + algorithm.pseudocode + "</pre></code>";
+    var factsText = algorithm.facts.replace(/\n/g, "<br />");
+    facts.innerHTML = "Facts: "+ '<br>' + factsText;
 
     icon.addEventListener('click', () => {
         sessionStorage.setItem('editAlgorithmId', id);

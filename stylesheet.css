@@ -11,6 +11,12 @@
 .icon-button:hover{
     color:#666666;
 }
+
+pre {
+    padding: 1rem;
+    background-color: #eeeeee;
+    border-radius: 1rem;
+}
 /* #newAlgorithmContainer {
     margin: 3rem;
 } */
